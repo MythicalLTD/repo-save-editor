@@ -2,10 +2,11 @@ module.exports = {
   apps: [
     {
       name: 'repo-save-editor',
-      script: 'node',
-      args: '.next/standalone/server.js',
+      script: 'pnpm',
+      args: 'start',
       instances: 1,
       exec_mode: 'fork',
+      cwd: '/var/www/repo-save-editor',
       env: {
         NODE_ENV: 'production',
         PORT: 4039
