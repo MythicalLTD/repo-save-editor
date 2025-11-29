@@ -1,6 +1,6 @@
 # R.E.P.O Save Editor
 
-[<img src="https://flagcdn.com/w20/br.png" alt="Bandeira do Brasil"> Versão em Português](./README.pt.md)
+[<img src="https://flagcdn.com/w20/br.png" alt="Bandeira do Brasil"> Versão em Português](./README.pt.md) | [<img src="https://flagcdn.com/w20/ro.png" alt="Steagul României"> Versiunea în Română](./README.ro.md)
 
 <div>
   <img src="src/app/icon.png" alt="R.E.P.O Save Editor Logo" width="200" height="200" />

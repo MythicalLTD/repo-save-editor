@@ -1,6 +1,6 @@
 # R.E.P.O Save Editor
 
-[<img src="https://flagcdn.com/w20/us.png" alt="United States Flag"> English Version](./README.md)
+[<img src="https://flagcdn.com/w20/us.png" alt="United States Flag"> English Version](./README.md) | [<img src="https://flagcdn.com/w20/ro.png" alt="Steagul României"> Versiunea în Română](./README.ro.md)
 
 <img src="src/app/icon.png" alt="Logo do R.E.P.O Save Editor" width="200" height="200" />
 
