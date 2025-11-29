@@ -23,9 +23,6 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "build:cloudflare": "opennextjs-cloudflare build",
-    "preview:cloudflare": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy:cloudflare": "opennextjs-cloudflare build && pnpm exec wrangler deploy",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
