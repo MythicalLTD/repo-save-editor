@@ -11,9 +11,22 @@ import { cookies } from 'next/headers'
  * @returns An object containing the locale and messages for that locale.
  */
 export default getRequestConfig(async () => {
-  const cookieStore = await cookies()
-  const localeCookie = cookieStore.get('locale')
-  const locale = localeCookie?.value || 'en'
+  let locale = 'en'
+  
+  try {
+    const cookieStore = await cookies()
+    const localeCookie = cookieStore.get('locale')
+    locale = localeCookie?.value || 'en'
+  } catch {
+    // Fallback to 'en' if cookies() fails in Edge Runtime
+    locale = 'en'
+  }
+
+  // Validate locale
+  const validLocales = ['en', 'pt', 'ro'] as const
+  if (!validLocales.includes(locale as typeof validLocales[number])) {
+    locale = 'en'
+  }
 
   return {
     locale,
