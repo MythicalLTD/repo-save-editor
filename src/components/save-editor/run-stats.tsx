@@ -8,7 +8,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { useRunStats } from '@/hooks/use-run-stats'
 import type { SaveGame } from '@/model/save-game'
-import { DollarSign, Gauge, Heart, Save, Zap, Edit2, Calendar } from 'lucide-react'
+import { DollarSign, Gauge, Zap, Edit2, Calendar } from 'lucide-react'
 import { PurchasedItems } from './purchased-items'
 import { StatsItem } from './stats-item'
 import { TimePlayedEditor } from './time-played-editor'
@@ -152,7 +152,7 @@ export default function RunStats({
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           <StatsItem
             icon={Gauge}
             titleKey="level"
@@ -195,39 +195,6 @@ export default function RunStats({
             onDecrease={() => handleStatChange('chargingStationCharge', -1)}
             onValueChange={(newValue) => updateRunStatValue('chargingStationCharge', Math.max(0, newValue))}
             disableDecrease={getRunStatValue('chargingStationCharge') <= 0}
-            minValue={0}
-          />
-          <StatsItem
-            icon={Zap}
-            titleKey="charging_station_total"
-            value={getRunStatValue('chargingStationChargeTotal').toString()}
-            numericValue={getRunStatValue('chargingStationChargeTotal')}
-            onIncrease={() => handleStatChange('chargingStationChargeTotal', 1)}
-            onDecrease={() => handleStatChange('chargingStationChargeTotal', -1)}
-            onValueChange={(newValue) => updateRunStatValue('chargingStationChargeTotal', Math.max(0, newValue))}
-            disableDecrease={getRunStatValue('chargingStationChargeTotal') <= 0}
-            minValue={0}
-          />
-          <StatsItem
-            icon={Heart}
-            titleKey="lives"
-            value={getRunStatValue('lives').toString()}
-            numericValue={getRunStatValue('lives')}
-            onIncrease={() => handleStatChange('lives', 1)}
-            onDecrease={() => handleStatChange('lives', -1)}
-            onValueChange={(newValue) => updateRunStatValue('lives', Math.max(0, newValue))}
-            disableDecrease={getRunStatValue('lives') <= 0}
-            minValue={0}
-          />
-          <StatsItem
-            icon={Save}
-            titleKey="save_level"
-            value={getRunStatValue('save level').toString()}
-            numericValue={getRunStatValue('save level')}
-            onIncrease={() => handleStatChange('save level', 1)}
-            onDecrease={() => handleStatChange('save level', -1)}
-            onValueChange={(newValue) => updateRunStatValue('save level', Math.max(0, newValue))}
-            disableDecrease={getRunStatValue('save level') <= 0}
             minValue={0}
           />
         </div>

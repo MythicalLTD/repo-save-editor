@@ -23,6 +23,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:cloudflare": "pnpm dlx opennext@latest build",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
