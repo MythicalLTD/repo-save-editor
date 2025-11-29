@@ -34,7 +34,7 @@ export default function GitHubStars() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
-            href="https://github.com/luccasfr/repo-save-editor"
+            href="https://github.com/MythicalLTD/repo-save-editor"
             target="_blank"
           >
             <Button variant="outline" className="group">

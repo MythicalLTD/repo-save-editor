@@ -9,6 +9,9 @@
         ],
         "en": [
           "Creation of the save editor with basic functionalities."
+        ],
+        "ro": [
+          "Crearea editorului de salvare cu funcționalitățile de bază."
         ]
       }
     },
@@ -25,6 +28,11 @@
           "Added option to change save items",
           "Added option to search for players steam avatars",
           "Added option to change player current health"
+        ],
+        "ro": [
+          "Adăugată opțiunea de a modifica obiectele din salvare",
+          "Adăugată opțiunea de a căuta avatare Steam ale jucătorilor",
+          "Adăugată opțiunea de a modifica viața curentă a jucătorului"
         ]
       }
     },
@@ -37,6 +45,9 @@
         ],
         "en": [
           "Implemented save history functionality"
+        ],
+        "ro": [
+          "Implementată funcționalitatea de istoric salvări"
         ]
       }
     },
@@ -49,6 +60,9 @@
         ],
         "en": [
           "New items and upgrades introduced in version v0.1.2.37_beta of R.E.P.O."
+        ],
+        "ro": [
+          "Obiecte și îmbunătățiri noi introduse în versiunea v0.1.2.37_beta a R.E.P.O."
         ]
       }
     },
@@ -61,6 +75,9 @@
         ],
         "en": [
           "Changed the way to handle upgrades internally, to allow more flexibility and ease of maintenance."
+        ],
+        "ro": [
+          "Modificat modul de gestionare a îmbunătățirilor intern, pentru a permite mai multă flexibilitate și ușurință în întreținere."
         ]
       }
     },
@@ -75,6 +92,88 @@
         "en": [
           "Added option to delete players from the save-game.",
           "Visual adjustment in the display of the version history description."
+        ],
+        "ro": [
+          "Adăugată opțiunea de a șterge jucători din salvare.",
+          "Ajustare vizuală în afișarea descrierii istoricului versiunilor."
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "date": "2025-01-27 00:00",
+      "changes": {
+        "pt": [
+          "Código otimizado para melhor performance e manutenibilidade.",
+          "Pacotes atualizados e otimizados.",
+          "Tema roxo forçado aplicado em toda a aplicação.",
+          "Melhorias visuais com gradientes e efeitos de profundidade.",
+          "Logo e ícone agora renderizados em roxo usando CSS.",
+          "Adicionada opção de editar valores diretamente clicando nos números.",
+          "Adicionada funcionalidade para adicionar novos itens à lista de itens comprados.",
+          "Corrigido cálculo de saúde e stamina para atualizar corretamente quando upgrades são alterados.",
+          "Melhorias no design da página principal com melhor hierarquia visual.",
+          "Suporte para idioma romeno adicionado.",
+          "Adicionada funcionalidade para adicionar novos jogadores ao save game usando Steam ID.",
+          "Validação de Steam ID e busca automática de avatares Steam.",
+          "Validação para evitar Steam IDs e nomes de jogadores duplicados.",
+          "Removido botão de toggle de tema (modo roxo sempre ativo).",
+          "Redesign completo da seção Recent com layout em tabela.",
+          "Versão History movida para o header com diálogo clicável.",
+          "Seção Recent agora ocupa largura total da página.",
+          "Adicionado botão para voltar ao menu principal quando um save está carregado.",
+          "Logo agora é clicável para retornar ao menu principal.",
+          "Lista de versões agora mostra a versão mais recente primeiro.",
+          "Adicionado botão para deletar saves individuais do histórico.",
+          "Diálogo de confirmação para deletar saves do histórico."
+        ],
+        "en": [
+          "Codebase optimized for better performance and maintainability.",
+          "Packages updated and optimized.",
+          "Purple theme forced across the entire application.",
+          "Visual improvements with gradients and depth effects.",
+          "Logo and icon now rendered in purple using CSS.",
+          "Added option to edit values directly by clicking on numbers.",
+          "Added functionality to add new items to the purchased items list.",
+          "Fixed health and stamina calculations to update correctly when upgrades are changed.",
+          "Main page design improvements with better visual hierarchy.",
+          "Romanian language support added.",
+          "Added functionality to add new players to the save game using Steam ID.",
+          "Steam ID validation and automatic Steam avatar fetching.",
+          "Validation to prevent duplicate Steam IDs and player names.",
+          "Removed theme toggle button (purple mode always active).",
+          "Complete redesign of Recent section with table layout.",
+          "Version History moved to header with clickable dialog.",
+          "Recent section now takes full width of the page.",
+          "Added button to return to main menu when a save is loaded.",
+          "Logo is now clickable to return to main menu.",
+          "Version list now shows latest version first.",
+          "Added button to delete individual saves from history.",
+          "Confirmation dialog for deleting saves from history."
+        ],
+        "ro": [
+          "Cod optimizat pentru performanță și întreținere mai bună.",
+          "Pachete actualizate și optimizate.",
+          "Temă mov forțată în întreaga aplicație.",
+          "Îmbunătățiri vizuale cu gradiente și efecte de adâncime.",
+          "Logo și iconiță acum renderizate în mov folosind CSS.",
+          "Adăugată opțiunea de a edita valorile direct făcând click pe numere.",
+          "Adăugată funcționalitatea de a adăuga obiecte noi în lista de obiecte cumpărate.",
+          "Corectat calculul sănătății și rezistenței pentru a se actualiza corect când upgrade-urile sunt modificate.",
+          "Îmbunătățiri ale designului paginii principale cu o ierarhie vizuală mai bună.",
+          "Adăugat suport pentru limba română.",
+          "Adăugată funcționalitatea de a adăuga jucători noi în salvare folosind Steam ID.",
+          "Validare Steam ID și preluare automată a avatarurilor Steam.",
+          "Validare pentru a preveni Steam ID-uri și nume de jucători duplicate.",
+          "Eliminat butonul de comutare a temei (modul violet întotdeauna activ).",
+          "Redesign complet al secțiunii Recent cu layout în tabel.",
+          "Istoricul versiunilor mutat în header cu dialog clicabil.",
+          "Secțiunea Recent ocupă acum lățimea completă a paginii.",
+          "Adăugat buton pentru a reveni la meniul principal când o salvare este încărcată.",
+          "Logo-ul este acum clicabil pentru a reveni la meniul principal.",
+          "Lista de versiuni afișează acum cea mai recentă versiune primul.",
+          "Adăugat buton pentru a șterge salvări individuale din istoric.",
+          "Dialog de confirmare pentru ștergerea salvărilor din istoric."
         ]
       }
     }

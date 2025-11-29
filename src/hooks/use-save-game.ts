@@ -67,14 +67,80 @@ export function useSaveGame({ saveGame, onUpdateSaveData }: UseSaveGameProps) {
   }
 
   /**
+   * Adds a new player to the save game data
+   * @param playerId - The unique ID for the player
+   * @param playerName - The display name for the player
+   * @description Adds the player to playerNames and initializes all player-related dictionaries
+   * with default values
+   */
+  const addPlayer = (playerId: string, playerName: string) => {
+    const updatedSaveGame = structuredClone(saveGame)
+
+    // Add player name
+    if (!updatedSaveGame.playerNames?.value) {
+      updatedSaveGame.playerNames = {
+        __type: updatedSaveGame.playerNames?.__type || 'System.Collections.Generic.Dictionary`2',
+        value: {}
+      }
+    }
+    updatedSaveGame.playerNames.value[playerId] = playerName
+
+    // Initialize all player-related dictionaries with default values
+    const dictionaries = updatedSaveGame.dictionaryOfDictionaries.value
+    const BASE_HEALTH = 100
+    const BASE_STAMINA = 40
+
+    // Initialize all player dictionaries
+    const playerDictionaries: Array<keyof typeof dictionaries> = [
+      'playerHealth',
+      'playerUpgradeHealth',
+      'playerUpgradeStamina',
+      'playerUpgradeExtraJump',
+      'playerUpgradeLaunch',
+      'playerUpgradeMapPlayerCount',
+      'playerUpgradeSpeed',
+      'playerUpgradeStrength',
+      'playerUpgradeRange',
+      'playerUpgradeThrow',
+      'playerHasCrown'
+    ]
+
+    // Add optional dictionaries if they exist
+    if (dictionaries.playerUpgradeCrouchRest) {
+      playerDictionaries.push('playerUpgradeCrouchRest')
+    }
+    if (dictionaries.playerUpgradeTumbleWings) {
+      playerDictionaries.push('playerUpgradeTumbleWings')
+    }
+
+    for (const dictKey of playerDictionaries) {
+      const dict = dictionaries[dictKey]
+      if (dict && typeof dict === 'object') {
+        const playerDict = dict as Record<string, number>
+        // Always set the value (overwrite if exists, initialize if not)
+        if (dictKey === 'playerHealth') {
+          playerDict[playerId] = BASE_HEALTH
+        } else {
+          // All upgrades start at 0
+          playerDict[playerId] = 0
+        }
+      }
+    }
+
+    onUpdateSaveData(updatedSaveGame)
+  }
+
+  /**
    * @typedef {Object} UseSaveGameReturn
    * @property {SaveGame} saveGame - The current save game data
    * @property {function} updateTimePlayed - Function to update the time played value
    * @property {function} removePlayer - Function to remove a player from the save game
+   * @property {function} addPlayer - Function to add a new player to the save game
    */
   return {
     saveGame,
     updateTimePlayed,
-    removePlayer
+    removePlayer,
+    addPlayer
   }
 }

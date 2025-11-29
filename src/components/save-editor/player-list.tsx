@@ -10,6 +10,7 @@ import { usePlayerUpgrades } from '@/hooks/use-player-upgrades'
 import { SaveGame } from '@/model/save-game'
 import { SteamAvatars } from '@/model/steam-avatars'
 import { useTranslations } from 'next-intl'
+import AddPlayer from './add-player'
 import PlayerAvatar from './player-avatar'
 import { HealthBar, StaminaBar } from './player-status-bars'
 import PlayerUpgrades from './player-upgrades'
@@ -19,12 +20,14 @@ type PlayerListProps = {
   saveGame: SaveGame
   steamAvatars: SteamAvatars | null
   onUpdateSaveData: (updatedSaveData: SaveGame) => void
+  onAvatarUpdate?: (avatars: SteamAvatars) => void
 }
 
 export default function PlayerList({
   saveGame,
   onUpdateSaveData,
-  steamAvatars
+  steamAvatars,
+  onAvatarUpdate
 }: PlayerListProps) {
   const t = useTranslations('player_list')
   const { getUpgradeValue, setUpgradeValue } = usePlayerUpgrades(
@@ -32,9 +35,24 @@ export default function PlayerList({
     onUpdateSaveData
   )
 
+  const players = saveGame?.playerNames
+    ? Object.entries(saveGame.playerNames.value)
+    : []
+
   return (
-    saveGame?.playerNames &&
-    Object.entries(saveGame?.playerNames.value).map(([key, value]) => (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          {t('title')}
+        </h3>
+        <AddPlayer
+          saveGame={saveGame}
+          onUpdateSaveData={onUpdateSaveData}
+          onAvatarUpdate={onAvatarUpdate}
+        />
+      </div>
+      {players.length > 0 ? (
+        players.map(([key, value]) => (
       <Card key={key}>
         <CardHeader className="flex items-center justify-between">
           <div className="space-y-2">
@@ -76,5 +94,13 @@ export default function PlayerList({
         </CardContent>
       </Card>
     ))
+      ) : (
+        <Card>
+          <CardContent className="py-8 text-center text-muted-foreground">
+            <p>{t('empty')}</p>
+          </CardContent>
+        </Card>
+      )}
+    </div>
   )
 }

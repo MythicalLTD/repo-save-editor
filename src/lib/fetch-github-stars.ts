@@ -6,7 +6,7 @@
 export default async function fetchGitHubStars(): Promise<number> {
   try {
     const response = await fetch(
-      'https://api.github.com/repos/luccasfr/repo-save-editor/stargazers',
+      'https://api.github.com/repos/MythicalLTD/repo-save-editor/stargazers',
       { next: { revalidate: 0.5 * 60 * 60 } }
     )
     if (!response.ok) throw new Error('Network response was not ok')

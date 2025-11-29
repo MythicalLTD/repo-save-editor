@@ -34,16 +34,23 @@
   "save_history": {
     "title": "Recentes",
     "clear": "Limpar histórico",
-    "level": "Nível:",
-    "total_haul": "Total extraído:",
-    "players": "Jogadores:",
+    "level": "Nível",
+    "total_haul": "Total Extraído",
+    "players": "Jogadores",
     "load": "Carregar Save",
     "download": "Baixar",
     "disclaimer": "Os dados do save game são armazenados localmente no seu navegador. Eles não são enviados para nenhum servidor e são excluídos quando você limpa o cache do navegador ou usa o modo de navegação anônima.",
     "disable": "Desabilitar histórico",
     "enable": "Habilitar histórico",
     "disabled": "Histórico desabilitado",
-    "empty": "Nenhum save recente encontrado."
+    "empty": "Nenhum save recente encontrado.",
+    "file_name": "Nome do Arquivo",
+    "date": "Data",
+    "actions": "Ações",
+    "delete": "Excluir",
+    "delete_title": "Excluir Save",
+    "delete_description": "Tem certeza de que deseja excluir \"{fileName}\" do seu histórico? Esta ação não pode ser desfeita.",
+    "cancel": "Cancelar"
   },
   "github_stars": {
     "title": "Estrelas",
@@ -51,6 +58,7 @@
   },
   "save_data": {
     "new_file": "Novo arquivo",
+    "back_to_main": "Voltar ao Início",
     "reset": "Redefinir Alterações",
     "save": "Salvar",
     "players": "Jogadores",
@@ -60,6 +68,7 @@
     "title": "Lista de Jogadores",
     "status": "Status",
     "upgrades": "Melhorias",
+    "empty": "Nenhum jogador encontrado. Adicione um jogador para começar.",
     "attributes": {
       "playerHealth": "Saúde",
       "playerUpgradeStamina": "Estamina",
@@ -80,6 +89,33 @@
     "cancel": "Cancelar",
     "continue": "Continuar",
     "button_label": "Remover jogador"
+  },
+  "add_player": {
+    "title": "Adicionar Novo Jogador",
+    "description": "Adicione um novo jogador ao seu save game usando o Steam ID. O jogador será inicializado com valores padrão e o avatar do Steam será buscado automaticamente.",
+    "button_label": "Adicionar Jogador",
+    "player_id_label": "Steam ID",
+    "player_id_placeholder": "Digite o Steam ID (número de 17 dígitos)",
+    "player_id_hint": "Steam ID é um número de 15-17 dígitos (geralmente começa com 7656119...). Você pode encontrá-lo na URL do seu perfil Steam.",
+    "player_name_label": "Nome do Jogador",
+    "player_name_placeholder": "Digite o nome de exibição do jogador",
+    "add": "Adicionar",
+    "adding": "Adicionando...",
+    "cancel": "Cancelar",
+    "error": {
+      "player_id_required": "Steam ID é obrigatório",
+      "player_name_required": "Nome do jogador é obrigatório",
+      "player_id_exists": "Um jogador com este Steam ID já existe",
+      "player_name_exists": "Um jogador com este nome já existe",
+      "invalid_steam_id": "Steam ID inválido. Por favor, insira um Steam ID válido de 15-17 dígitos.",
+      "failed_to_add": "Falha ao adicionar jogador. Por favor, tente novamente."
+    },
+    "warning": {
+      "avatar_fetch_failed": "Jogador adicionado, mas falha ao buscar avatar. O avatar pode aparecer mais tarde."
+    },
+    "success": {
+      "player_added": "Jogador adicionado com sucesso!"
+    }
   },
   "run_stats": {
     "title": "Dados da Run",

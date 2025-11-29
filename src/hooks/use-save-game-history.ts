@@ -129,10 +129,34 @@ export function useSaveGameHistory() {
     setHistory([])
   }, [])
 
+  /**
+   * Removes a specific save game from history
+   *
+   * @param fileName - The name of the save game file
+   * @param timestamp - The timestamp of the save game
+   */
+  const removeFromHistory = useCallback(
+    (fileName: string, timestamp: number) => {
+      if (disabled) return
+
+      const currentHistory = loadHistoryFromLocalStorage()
+      if (!currentHistory) return
+
+      const updatedHistory = currentHistory.filter(
+        (item) => !(item.fileName === fileName && item.timestamp === timestamp)
+      )
+
+      setHistory(updatedHistory)
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedHistory))
+    },
+    [disabled, loadHistoryFromLocalStorage]
+  )
+
   return {
     history,
     addToHistory,
     clearHistory,
+    removeFromHistory,
     disabled,
     disableHistory,
     enableHistory

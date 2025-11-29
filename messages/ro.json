@@ -1,0 +1,199 @@
+{
+  "version_history": {
+    "title": "Istoric Versiuni",
+    "description": "Aceasta este o listă cu toate modificările făcute în proiect. Include corecții de erori, funcții noi și alte îmbunătățiri.",
+    "release_date": "Data Lansării",
+    "changes": "Modificări"
+  },
+  "upload_file": {
+    "title": "Trimite fișier",
+    "description": "Trage și plasează fișierul de salvare aici sau dă click pentru a selecta.",
+    "status": {
+      "over": "poți plasa fișierul acum.",
+      "enter": "plasează! plasează! plasează!",
+      "leave": "plasează fișierul/fișierele tale aici.",
+      "none": "dă click pentru a selecta sau trage și plasează fișierul.",
+      "mouseEnter": "dă click pentru a selecta fișierul."
+    },
+    "success": {
+      "copy": "Fișier copiat în clipboard!"
+    },
+    "save_game": {
+      "info": "Fișierele de salvare sunt de obicei localizate în"
+    },
+    "error": {
+      "invalid_file_type": "Tip de fișier invalid!",
+      "select_one_file": "Selectează doar un fișier!",
+      "invalid_file": "Fișier invalid! Te rugăm să încarci un fișier de salvare valid."
+    }
+  },
+  "save_editor": {
+    "error": {
+      "invalid_file": "Fișier invalid! Te rugăm să încarci un fișier de salvare valid."
+    }
+  },
+  "save_history": {
+    "title": "Recent",
+    "clear": "Șterge istoricul",
+    "level": "Nivel",
+    "total_haul": "Total Adunat",
+    "players": "Jucători",
+    "load": "Încarcă Salvare",
+    "download": "Descarcă",
+    "disclaimer": "Datele de salvare sunt stocate local în browser-ul tău. Nu sunt trimise către niciun server și sunt șterse când ștergi cache-ul browser-ului sau folosești modul incognito.",
+    "disable": "Dezactivează istoricul",
+    "enable": "Activează istoricul",
+    "disabled": "Istoric dezactivat",
+    "empty": "Nu s-au găsit salvări recente.",
+    "file_name": "Nume Fișier",
+    "date": "Dată",
+    "actions": "Acțiuni",
+    "delete": "Șterge",
+    "delete_title": "Șterge Salvare",
+    "delete_description": "Ești sigur că vrei să ștergi \"{fileName}\" din istoric? Această acțiune nu poate fi anulată.",
+    "cancel": "Anulează"
+  },
+  "github_stars": {
+    "title": "Stele",
+    "description": "Dacă îți place proiectul, consideră să dai o stea pe GitHub!"
+  },
+  "save_data": {
+    "new_file": "Fișier nou",
+    "back_to_main": "Înapoi la Meniu",
+    "reset": "Resetează modificările",
+    "save": "Salvează",
+    "players": "Jucători",
+    "run_data": "Date run"
+  },
+  "player_list": {
+    "title": "Lista Jucătorilor",
+    "status": "Status",
+    "upgrades": "Îmbunătățiri",
+    "empty": "Nu s-au găsit jucători. Adaugă un jucător pentru a începe.",
+    "attributes": {
+      "playerHealth": "Sănătate",
+      "playerUpgradeStamina": "Rezistență",
+      "playerUpgradeSpeed": "Viteză",
+      "playerUpgradeStrength": "Forță",
+      "playerUpgradeRange": "Rază",
+      "playerUpgradeLaunch": "Lansare",
+      "playerUpgradeExtraJump": "Săritură Extra",
+      "playerUpgradeMapPlayerCount": "Număr Jucători",
+      "playerUpgradeHealth": "Îmbunătățire Sănătate",
+      "playerUpgradeCrouchRest": "Odihnă Ghemuit",
+      "playerUpgradeTumbleWings": "Aripi la Cădere"
+    }
+  },
+  "remove_player": {
+    "confirmation_title": "Ești absolut sigur?",
+    "confirmation_description": "Aceasta va elimina permanent jucătorul din salvare.",
+    "cancel": "Anulează",
+    "continue": "Continuă",
+    "button_label": "Elimină jucător"
+  },
+  "add_player": {
+    "title": "Adaugă Jucător Nou",
+    "description": "Adaugă un jucător nou în salvare folosind Steam ID-ul. Jucătorul va fi inițializat cu valori implicite și avatarul Steam va fi preluat automat.",
+    "button_label": "Adaugă Jucător",
+    "player_id_label": "Steam ID",
+    "player_id_placeholder": "Introdu Steam ID (număr de 17 cifre)",
+    "player_id_hint": "Steam ID este un număr de 15-17 cifre (de obicei începe cu 7656119...). Îl poți găsi în URL-ul profilului tău Steam.",
+    "player_name_label": "Nume Jucător",
+    "player_name_placeholder": "Introdu numele de afișare al jucătorului",
+    "add": "Adaugă",
+    "adding": "Se adaugă...",
+    "cancel": "Anulează",
+    "error": {
+      "player_id_required": "Steam ID este obligatoriu",
+      "player_name_required": "Numele jucătorului este obligatoriu",
+      "player_id_exists": "Un jucător cu acest Steam ID există deja",
+      "player_name_exists": "Un jucător cu acest nume există deja",
+      "invalid_steam_id": "Steam ID invalid. Te rugăm să introduci un Steam ID valid de 15-17 cifre.",
+      "failed_to_add": "Eșec la adăugarea jucătorului. Te rugăm să încerci din nou."
+    },
+    "warning": {
+      "avatar_fetch_failed": "Jucător adăugat, dar eșec la preluarea avatarului. Avatarul poate apărea mai târziu."
+    },
+    "success": {
+      "player_added": "Jucător adăugat cu succes!"
+    }
+  },
+  "run_stats": {
+    "title": "Date Run",
+    "played_time": "jucat",
+    "items_title": "Obiecte",
+    "edit_time": "Editează timpul jucat",
+    "edit_time_title": "Editează Timpul Jucat",
+    "edit_time_description": "Ajustează timpul jucat pentru salvare",
+    "hours": "Ore",
+    "minutes": "Minute",
+    "seconds": "Secunde",
+    "cancel": "Anulează",
+    "save": "Salvează",
+    "stats": {
+      "level": "Nivel",
+      "currency": "Bani (K)",
+      "total_haul": "Total Adunat (K)",
+      "charging_station": "Încărcări Bază",
+      "Cart Medium": "Cărucior Mediu",
+      "Cart Small": "Cărucior Mic",
+      "Drone Battery": "Baterie Drone",
+      "Drone Feather": "Drone Pene",
+      "Drone Indestructible": "Drone Indestructibil",
+      "Drone Torque": "Drone Cuplu",
+      "Drone Zero Gravity": "Drone Antigravitație",
+      "Extraction Tracker": "Tracker Extracție",
+      "Grenade Duct Taped": "Grenadă Cu Bandă Adezivă",
+      "Grenade Explosive": "Grenadă Explozivă",
+      "Grenade Human": "Grenadă Umană",
+      "Grenade Shockwave": "Grenadă Undă de Șoc",
+      "Grenade Stun": "Grenadă Atordare",
+      "Gun Handgun": "Pistol",
+      "Gun Shotgun": "Pușcă",
+      "Gun Tranq": "Pistol Tranchilizant",
+      "Health Pack Large": "Kit Sănătate Mare",
+      "Health Pack Medium": "Kit Sănătate Mediu",
+      "Health Pack Small": "Kit Sănătate Mic",
+      "Melee Baseball Bat": "Băț Baseball",
+      "Melee Frying Pan": "Tigaie",
+      "Melee Inflatable Hammer": "Ciocan Inflabil",
+      "Melee Sledge Hammer": "Baros",
+      "Melee Sword": "Sabie",
+      "Mine Explosive": "Mină Explozivă",
+      "Mine Shockwave": "Mină Undă de Șoc",
+      "Mine Stun": "Mină Atordare",
+      "Orb Zero Gravity": "Orb Antigravitație",
+      "Power Crystal": "Cristal Putere",
+      "Rubber Duck": "Rățușcă de Cauciuc",
+      "Upgrade Map Player Count": "Îmbunătățire Număr Jucători Hartă",
+      "Upgrade Player Energy": "Îmbunătățire Energie Jucător",
+      "Upgrade Player Extra Jump": "Îmbunătățire Săritură Extra",
+      "Upgrade Player Grab Range": "Îmbunătățire Rază Apucare",
+      "Upgrade Player Grab Strength": "Îmbunătățire Forță Apucare",
+      "Upgrade Player Health": "Îmbunătățire Sănătate Jucător",
+      "Upgrade Player Sprint Speed": "Îmbunătățire Viteză Sprint",
+      "Upgrade Player Tumble Launch": "Îmbunătățire Lansare Cădere",
+      "Valuable Tracker": "Tracker Obiecte Valoroase",
+      "Gun Stun": "Pistol Atordare",
+      "Melee Stun Baton": "Băț Atordare",
+      "Gun Shockwave": "Pistol Undă de Șoc",
+      "Duck Bucket": "Găleată Rățușcă",
+      "Cart Cannon": "Tun Cărucior",
+      "Cart Laser": "Laser Cărucior",
+      "Gun Laser": "Pistol Laser",
+      "Phase Bridge": "Pod Fază",
+      "Upgrade Player Crouch Rest": "Îmbunătățire Odihnă Ghemuit",
+      "Upgrade Player Tumble Wings": "Îmbunătățire Aripi la Cădere"
+    }
+  },
+  "theme": {
+    "toggle": "Comută Tema",
+    "light": "Luminos",
+    "dark": "Întunecat",
+    "system": "Sistem"
+  },
+  "footer": {
+    "description": "Făcut cu ❤️ de"
+  }
+}
+

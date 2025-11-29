@@ -215,7 +215,7 @@ export default function UploadFile({
   }, [t])
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-6">
       <input
         type="file"
         className="hidden"
@@ -228,9 +228,13 @@ export default function UploadFile({
       <div>
         <div
           className={cn(
-            'flex min-h-32 w-full cursor-pointer items-center justify-center rounded',
-            'border-[1px] py-2 lg:min-h-48',
-            errorMessage ? 'border-destructive' : 'border-border',
+            'group flex min-h-40 w-full cursor-pointer items-center justify-center rounded-2xl',
+            'border-2 border-dashed py-8 transition-all duration-300 lg:min-h-56',
+            'bg-gradient-to-br from-card/60 to-card/40 backdrop-blur-md',
+            'shadow-lg shadow-primary/5',
+            errorMessage 
+              ? 'border-destructive bg-destructive/5 hover:bg-destructive/10 hover:border-destructive/60 hover:shadow-destructive/10' 
+              : 'border-primary/40 hover:border-primary/60 hover:bg-primary/10 hover:shadow-primary/20 hover:scale-[1.01]',
             className
           )}
           onDragOver={(e) => handleDragEvent(e, 'over')}
@@ -271,11 +275,13 @@ export default function UploadFile({
             </div>
           ) : (
             <div
-              className="text-primary/60 pointer-events-none flex w-full items-center justify-center
-                gap-2 px-4 text-sm"
+              className="text-primary/70 pointer-events-none flex w-full flex-col items-center justify-center
+                gap-4 px-4 text-center transition-all duration-300 group-hover:text-primary"
             >
-              {statusIcons[dragStatus]}
-              <p>{getStatusText(dragStatus)}</p>
+              <div className="rounded-full bg-primary/10 p-4 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">
+                {statusIcons[dragStatus]}
+              </div>
+              <p className="text-base font-medium">{getStatusText(dragStatus)}</p>
             </div>
           )}
         </div>
@@ -283,18 +289,18 @@ export default function UploadFile({
       {errorMessage && (
         <p className="text-destructive text-sm font-semibold">{errorMessage}</p>
       )}
-      <div className="space-y-2 text-sm">
-        <p>{t(`save_game.info`)}</p>
-        <div className="border-input relative rounded border-[1px] py-2 pr-8 pl-3 font-mono break-all">
+      <div className="space-y-3 rounded-xl border border-primary/10 bg-muted/20 p-4 backdrop-blur-sm">
+        <p className="text-sm font-medium text-foreground/80">{t(`save_game.info`)}</p>
+        <div className="border-primary/20 relative rounded-lg border bg-background/50 py-3 pr-10 pl-4 font-mono text-sm break-all backdrop-blur-sm transition-all hover:border-primary/30">
           <Button
             variant="outline"
-            className="absolute top-1/2 right-2 h-6 w-6 -translate-y-1/2"
+            className="absolute top-1/2 right-2 h-7 w-7 -translate-y-1/2 hover:bg-primary/10"
             size="icon"
             onClick={handleCopy}
           >
-            <Copy className="size-3" />
+            <Copy className="size-3.5" />
           </Button>
-          <p>%USERPROFILE%\AppData\LocalLow\semiwork\Repo\saves</p>
+          <p className="text-foreground/70">%USERPROFILE%\AppData\LocalLow\semiwork\Repo\saves</p>
         </div>
       </div>
     </div>

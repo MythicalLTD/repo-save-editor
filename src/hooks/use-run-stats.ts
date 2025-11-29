@@ -49,6 +49,24 @@ export function useRunStats(
   }
 
   /**
+   * Adds a new item to the purchased items list
+   *
+   * @param itemName - The display name of the item (e.g., "Cart Medium")
+   * @param initialQuantity - The initial quantity (default: 0)
+   */
+  const addPurchasedItem = (itemName: string, initialQuantity = 0) => {
+    const itemKey = `Item ${itemName.replaceAll(' ', '_')}`
+    const updatedSaveData = { ...saveData }
+    
+    // Initialize if it doesn't exist
+    if (!updatedSaveData.dictionaryOfDictionaries.value.itemsPurchased[itemKey]) {
+      updatedSaveData.dictionaryOfDictionaries.value.itemsPurchased[itemKey] = initialQuantity
+      updatedSaveData.dictionaryOfDictionaries.value.itemsPurchasedTotal[itemKey] = initialQuantity
+      onUpdateSaveData(updatedSaveData)
+    }
+  }
+
+  /**
    * Handles changes to a run statistic with validation
    *
    * @param statName - The name of the statistic to change
@@ -108,6 +126,9 @@ export function useRunStats(
     getRunStatValue,
     getItemPurchasedValue,
     handleStatChange,
-    handleItemsPurchasedChange
+    handleItemsPurchasedChange,
+    updateRunStatValue,
+    addPurchasedItem,
+    updatePurchasedItemValue
   }
 }

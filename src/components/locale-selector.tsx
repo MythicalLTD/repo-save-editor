@@ -28,6 +28,9 @@ export function LocaleSelector({ ...props }: LocaleSelectorProps) {
       case 'en': {
         return 'us'
       }
+      case 'ro': {
+        return 'ro'
+      }
       default: {
         return 'us'
       }
@@ -86,6 +89,21 @@ export function LocaleSelector({ ...props }: LocaleSelectorProps) {
             height={24}
           />
           Português
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className={cn(
+            'flex justify-between',
+            locale === 'ro' && 'font-semibold'
+          )}
+          onClick={() => handleLocaleChange('ro')}
+        >
+          <Image
+            src={`https://flagcdn.com/ro.svg`}
+            alt="flag"
+            width={24}
+            height={24}
+          />
+          Română
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

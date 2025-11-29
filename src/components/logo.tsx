@@ -20,14 +20,22 @@ export default function Logo() {
     }
   }, [isOpen])
 
+  const handleClick = () => {
+    window.location.href = '/'
+  }
+
   return (
-    <>
+    <button
+      onClick={handleClick}
+      className="cursor-pointer transition-opacity hover:opacity-80"
+      title="Back to main menu"
+    >
       <Image
         src={logo}
         alt="logo"
         width={64}
         height={64}
-        className={cn('size-12', isOpen ? 'hidden' : 'block')}
+        className={cn('size-12 purple-logo', isOpen ? 'hidden' : 'block')}
         priority
       />
       <Image
@@ -35,9 +43,9 @@ export default function Logo() {
         alt="logoOpen"
         width={64}
         height={64}
-        className={cn('size-12', isOpen ? 'block' : 'hidden')}
+        className={cn('size-12 purple-logo', isOpen ? 'block' : 'hidden')}
         priority
       />
-    </>
+    </button>
   )
 }

@@ -11,4 +11,5 @@ export interface ReleaseType {
 export interface ChangeType {
   pt: string[]
   en: string[]
+  ro: string[]
 }

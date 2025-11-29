@@ -35,16 +35,23 @@
   "save_history": {
     "title": "Recent",
     "clear": "Clear history",
-    "level": "Level:",
-    "total_haul": "Total haul:",
-    "players": "Players:",
+    "level": "Level",
+    "total_haul": "Total Haul",
+    "players": "Players",
     "load": "Load Save",
     "download": "Download",
     "disclaimer": "The save game data is stored locally in your browser. It is not sent to any server and is deleted when you clear your browser cache or use incognito mode.",
     "disable": "Disable history",
     "enable": "Enable history",
     "disabled": "History disabled",
-    "empty": "No recent saves found."
+    "empty": "No recent saves found.",
+    "file_name": "File Name",
+    "date": "Date",
+    "actions": "Actions",
+    "delete": "Delete",
+    "delete_title": "Delete Save",
+    "delete_description": "Are you sure you want to delete \"{fileName}\" from your history? This action cannot be undone.",
+    "cancel": "Cancel"
   },
   "github_stars": {
     "title": "Stars",
@@ -52,6 +59,7 @@
   },
   "save_data": {
     "new_file": "New file",
+    "back_to_main": "Back to Main",
     "reset": "Reset changes",
     "save": "Save",
     "players": "Players",
@@ -61,6 +69,7 @@
     "title": "Player List",
     "status": "Status",
     "upgrades": "Upgrades",
+    "empty": "No players found. Add a player to get started.",
     "attributes": {
       "playerHealth": "Health",
       "playerUpgradeStamina": "Stamina",
@@ -81,6 +90,33 @@
     "cancel": "Cancel",
     "continue": "Continue",
     "button_label": "Remove player"
+  },
+  "add_player": {
+    "title": "Add New Player",
+    "description": "Add a new player to your save game using their Steam ID. The player will be initialized with default values and their Steam avatar will be fetched automatically.",
+    "button_label": "Add Player",
+    "player_id_label": "Steam ID",
+    "player_id_placeholder": "Enter Steam ID (17-digit number)",
+    "player_id_hint": "Steam ID is a 15-17 digit number (usually starts with 7656119...). You can find it in your Steam profile URL.",
+    "player_name_label": "Player Name",
+    "player_name_placeholder": "Enter player display name",
+    "add": "Add",
+    "adding": "Adding...",
+    "cancel": "Cancel",
+    "error": {
+      "player_id_required": "Steam ID is required",
+      "player_name_required": "Player name is required",
+      "player_id_exists": "A player with this Steam ID already exists",
+      "player_name_exists": "A player with this name already exists",
+      "invalid_steam_id": "Invalid Steam ID. Please enter a valid 15-17 digit Steam ID.",
+      "failed_to_add": "Failed to add player. Please try again."
+    },
+    "warning": {
+      "avatar_fetch_failed": "Player added, but failed to fetch avatar. The avatar may appear later."
+    },
+    "success": {
+      "player_added": "Player added successfully!"
+    }
   },
   "run_stats": {
     "title": "Run Data",

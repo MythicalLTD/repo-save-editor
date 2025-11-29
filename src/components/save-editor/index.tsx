@@ -2,9 +2,7 @@
 
 import SaveData from '@/components/save-editor/save-data'
 import SaveGameHistory from '@/components/save-editor/save-game-history'
-import { Separator } from '@/components/ui/separator'
 import UploadFile from '@/components/upload-file'
-import VersionHistory from '@/components/version-history'
 import { ENCRYPTION_KEY } from '@/consts/encrypton-key'
 import { useSaveGameHistory } from '@/hooks/use-save-game-history'
 import downloadSaveGame from '@/lib/download-save-game'
@@ -102,14 +100,25 @@ export default function SaveEditor() {
           onNewFile={handleNewFile}
           fileName={fileName}
           steamAvatars={steamAvatars}
+          onAvatarUpdate={setSteamAvatars}
         />
       ) : (
-        <div className="space-y-8">
-          <UploadFile className="w-full" onFilesChange={handleFileUpload} />
-          <Separator />
-          <SaveGameHistory onSelectSave={handleSelectSave} />
-          <Separator />
-          <VersionHistory />
+        <div className="space-y-12 pb-12">
+          {/* Hero Upload Section */}
+          <div className="relative">
+            <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 blur-3xl" />
+            <div className="relative rounded-2xl border border-primary/20 bg-card/30 p-8 backdrop-blur-sm">
+              <UploadFile className="w-full" onFilesChange={handleFileUpload} />
+            </div>
+          </div>
+
+          {/* Recent Section - Full Width */}
+          <div className="relative">
+            <div className="absolute inset-0 -z-10 rounded-xl bg-gradient-to-br from-primary/5 to-transparent blur-2xl" />
+            <div className="relative rounded-xl border border-primary/10 bg-card/20 p-6 backdrop-blur-sm">
+              <SaveGameHistory onSelectSave={handleSelectSave} />
+            </div>
+          </div>
         </div>
       )}
     </>

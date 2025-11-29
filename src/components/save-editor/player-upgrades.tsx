@@ -33,18 +33,45 @@ export default function PlayerUpgrades({
     []
   )
 
+  const updateHealthAndUpgrade = (
+    key: string,
+    newHealthUpgrade: number,
+    newHealth: number
+  ) => {
+    const updatedSaveData = { ...saveGame }
+    if (
+      updatedSaveData.dictionaryOfDictionaries.value.playerUpgradeHealth &&
+      updatedSaveData.dictionaryOfDictionaries.value.playerHealth
+    ) {
+      updatedSaveData.dictionaryOfDictionaries.value.playerUpgradeHealth[key] =
+        newHealthUpgrade
+      updatedSaveData.dictionaryOfDictionaries.value.playerHealth[key] = newHealth
+      onUpdateSaveData(updatedSaveData)
+    }
+  }
+
   const handleIncreaseHealth = (key: string) => {
-    handleIncrease(key, 'playerUpgradeHealth')
-    const healthUpgrade = getUpgradeValue(key, 'playerUpgradeHealth')
-    const maxHealth = BASE_HEALTH + healthUpgrade * HEALTH_INCREMENT
-    setUpgradeValue(key, 'playerHealth', maxHealth)
+    const currentHealthUpgrade = getUpgradeValue(key, 'playerUpgradeHealth')
+    const newHealthUpgrade = currentHealthUpgrade + 1
+    const maxHealth = BASE_HEALTH + newHealthUpgrade * HEALTH_INCREMENT
+    updateHealthAndUpgrade(key, newHealthUpgrade, maxHealth)
   }
 
   const handleDecreaseHealth = (key: string) => {
-    handleDecrease(key, 'playerUpgradeHealth')
-    const healthUpgrade = getUpgradeValue(key, 'playerUpgradeHealth')
-    const maxHealth = BASE_HEALTH + healthUpgrade * HEALTH_INCREMENT
-    setUpgradeValue(key, 'playerHealth', maxHealth)
+    const currentHealthUpgrade = getUpgradeValue(key, 'playerUpgradeHealth')
+    if (currentHealthUpgrade > 0) {
+      const newHealthUpgrade = currentHealthUpgrade - 1
+      const maxHealth = BASE_HEALTH + newHealthUpgrade * HEALTH_INCREMENT
+      updateHealthAndUpgrade(key, newHealthUpgrade, maxHealth)
+    }
+  }
+
+  const handleHealthUpgradeChange = (key: string, newValue: number) => {
+    // Ensure newValue is non-negative
+    const safeValue = Math.max(0, newValue)
+    const maxHealth = BASE_HEALTH + safeValue * HEALTH_INCREMENT
+    // Update both health upgrade and health in a single operation
+    updateHealthAndUpgrade(key, safeValue, maxHealth)
   }
 
   return (
@@ -65,6 +92,13 @@ export default function PlayerUpgrades({
                   ? handleDecreaseHealth(playerId)
                   : handleDecrease(playerId, upgrade)
               }
+              onValueChange={(newValue) => {
+                if (upgrade === 'playerUpgradeHealth') {
+                  handleHealthUpgradeChange(playerId, newValue)
+                } else {
+                  setUpgradeValue(playerId, upgrade, Math.max(0, newValue))
+                }
+              }}
               icon={UPGRADES_ICON[upgrade]}
               titleKey={upgrade}
             />

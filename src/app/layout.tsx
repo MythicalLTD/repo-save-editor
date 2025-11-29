@@ -22,7 +22,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'R.E.P.O. Save Editor',
   description:
-    'Web application that allows you to modify R.E.P.O game save files easily.'
+    'Web application that allows you to modify R.E.P.O game save files easily.',
+  icons: {
+    icon: [
+      {
+        url: '/icon.png',
+        type: 'image/png'
+      }
+    ],
+    apple: [
+      {
+        url: '/apple-icon.png',
+        type: 'image/png'
+      }
+    ]
+  }
 }
 
 export default async function RootLayout({
@@ -33,22 +47,25 @@ export default async function RootLayout({
   const locale = (await getLocale()) as LocaleType
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-[100dvh] flex-col
           font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
             <Navbar />
-            <div className="flex-1 space-y-4 px-6 pt-18 md:px-12">
-              {children}
-            </div>
+            <main className="flex-1 px-6 pt-24 md:px-12">
+              <div className="mx-auto max-w-7xl">
+                {children}
+              </div>
+            </main>
             <Footer />
             <Toaster />
           </NextIntlClientProvider>

@@ -33,7 +33,7 @@ This project is built using modern web technologies:
 
 ```bash
 # Clone the repository
-git clone https://github.com/luccasfr/repo-save-editor.git
+git clone https://github.com/MythicalLTD/repo-save-editor.git
 
 # Navigate to the project directory
 cd repo-save-editor

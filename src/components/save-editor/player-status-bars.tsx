@@ -156,13 +156,18 @@ export function HealthBar({
 }
 
 export function StaminaBar({ stamina }: { stamina: number }) {
+  // Base stamina is 40, each upgrade adds 10
+  const BASE_STAMINA = 40
+  const STAMINA_INCREMENT = 10
+  const totalStamina = BASE_STAMINA + stamina * STAMINA_INCREMENT
+  
   return (
     <div
       className="flex h-8 w-full items-center justify-between gap-1 rounded bg-yellow-500 px-2
         py-1"
     >
       <Zap className="size-4" />
-      <p className="font-mono">{stamina * 10 + 40}</p>
+      <p className="font-mono">{totalStamina}</p>
     </div>
   )
 }

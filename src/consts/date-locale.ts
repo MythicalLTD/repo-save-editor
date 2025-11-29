@@ -6,5 +6,6 @@
  */
 export const DATE_LOCALE = {
   pt: 'pt-BR',
-  en: 'en-US'
+  en: 'en-US',
+  ro: 'ro-RO'
 }

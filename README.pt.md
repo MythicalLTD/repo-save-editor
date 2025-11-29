@@ -31,7 +31,7 @@ Este projeto é construído usando tecnologias web modernas:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/luccasfr/repo-save-editor.git
+git clone https://github.com/MythicalLTD/repo-save-editor.git
 
 # Navegue para o diretório do projeto
 cd repo-save-editor
