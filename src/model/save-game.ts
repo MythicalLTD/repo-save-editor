@@ -59,6 +59,7 @@ export interface RunStats {
   currency: number
   lives: number
   chargingStationCharge: number
+  chargingStationChargeTotal: number
   totalHaul: number
   'save level': number
 }

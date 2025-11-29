@@ -131,16 +131,50 @@ export function useSaveGame({ saveGame, onUpdateSaveData }: UseSaveGameProps) {
   }
 
   /**
+   * Updates the team name in the save game data
+   * @param newTeamName - The new team name value to set
+   */
+  const updateTeamName = (newTeamName: string) => {
+    const updatedSaveGame = {
+      ...saveGame,
+      teamName: {
+        ...saveGame.teamName,
+        value: newTeamName
+      }
+    }
+    onUpdateSaveData(updatedSaveGame)
+  }
+
+  /**
+   * Updates the date and time in the save game data
+   * @param newDateAndTime - The new date and time value to set (format: YYYY-MM-DD)
+   */
+  const updateDateAndTime = (newDateAndTime: string) => {
+    const updatedSaveGame = {
+      ...saveGame,
+      dateAndTime: {
+        ...saveGame.dateAndTime,
+        value: newDateAndTime
+      }
+    }
+    onUpdateSaveData(updatedSaveGame)
+  }
+
+  /**
    * @typedef {Object} UseSaveGameReturn
    * @property {SaveGame} saveGame - The current save game data
    * @property {function} updateTimePlayed - Function to update the time played value
    * @property {function} removePlayer - Function to remove a player from the save game
    * @property {function} addPlayer - Function to add a new player to the save game
+   * @property {function} updateTeamName - Function to update the team name
+   * @property {function} updateDateAndTime - Function to update the date and time
    */
   return {
     saveGame,
     updateTimePlayed,
     removePlayer,
-    addPlayer
+    addPlayer,
+    updateTeamName,
+    updateDateAndTime
   }
 }

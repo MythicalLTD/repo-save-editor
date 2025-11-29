@@ -8,6 +8,9 @@ export type RunStatKey =
   | 'currency'
   | 'totalHaul'
   | 'chargingStationCharge'
+  | 'chargingStationChargeTotal'
+  | 'lives'
+  | 'save level'
 
 /**
  * Hook for managing game run statistics
@@ -28,6 +31,10 @@ export function useRunStats(
    */
   const updateRunStatValue = (statName: RunStatKey, newValue: number) => {
     const updatedSaveData = { ...saveData }
+    // Ensure the field exists before updating
+    if (!updatedSaveData.dictionaryOfDictionaries.value.runStats[statName]) {
+      updatedSaveData.dictionaryOfDictionaries.value.runStats[statName] = 0
+    }
     updatedSaveData.dictionaryOfDictionaries.value.runStats[statName] = newValue
     onUpdateSaveData(updatedSaveData)
   }
@@ -106,10 +113,11 @@ export function useRunStats(
    * Gets the current value of a run statistic
    *
    * @param statName - The name of the statistic to retrieve
-   * @returns The current value of the statistic
+   * @returns The current value of the statistic (0 if not found)
    */
   const getRunStatValue = (statName: RunStatKey) => {
-    return saveData.dictionaryOfDictionaries.value.runStats[statName]
+    const value = saveData.dictionaryOfDictionaries.value.runStats[statName]
+    return value !== undefined ? value : 0
   }
 
   /**

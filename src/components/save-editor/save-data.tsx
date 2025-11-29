@@ -3,6 +3,7 @@
 import { type SaveGame } from '@/model/save-game'
 import PlayerList from './player-list'
 import RunStats from './run-stats'
+import { ItemInstances } from './item-instances'
 import { Button } from '@/components/ui/button'
 import { Home, LucideIcon, Plus, RotateCcw, Save } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -134,6 +135,15 @@ export default function SaveData({
               onUpdateSaveData={onUpdateSaveData}
               steamAvatars={steamAvatars}
               onAvatarUpdate={onAvatarUpdate}
+            />
+          </div>
+        </div>
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 rounded-xl bg-gradient-to-br from-primary/5 to-transparent blur-2xl" />
+          <div className="relative space-y-4 rounded-xl border border-primary/10 bg-card/20 p-6 backdrop-blur-sm">
+            <ItemInstances
+              saveGame={saveGame}
+              onUpdateSaveData={onUpdateSaveData}
             />
           </div>
         </div>
