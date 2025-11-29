@@ -3,10 +3,8 @@
 import SaveData from '@/components/save-editor/save-data'
 import SaveGameHistory from '@/components/save-editor/save-game-history'
 import UploadFile from '@/components/upload-file'
-import { ENCRYPTION_KEY } from '@/consts/encrypton-key'
 import { useSaveGameHistory } from '@/hooks/use-save-game-history'
 import downloadSaveGame from '@/lib/download-save-game'
-import { decryptEs3 } from '@/lib/es3-crypto'
 import fetchAvatars from '@/lib/fetch-avatars'
 import { type SaveGame } from '@/model/save-game'
 import { SaveGameHistoryType } from '@/model/save-game-history'
@@ -58,7 +56,19 @@ export default function SaveEditor() {
   ) => {
     if (files.length > 0) {
       try {
-        const decrypted = await decryptEs3(files[0].base64, ENCRYPTION_KEY)
+        const response = await fetch('/api/decrypt', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ base64: files[0].base64 })
+        })
+
+        if (!response.ok) {
+          throw new Error('Decryption failed')
+        }
+
+        const { decrypted } = await response.json()
         const parsed = JSON.parse(decrypted) as SaveGame
         setSaveGame(parsed)
         setOriginalSaveData(structuredClone(parsed))

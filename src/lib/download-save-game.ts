@@ -1,6 +1,4 @@
-import { ENCRYPTION_KEY } from '@/consts/encrypton-key'
 import { SaveGame } from '@/model/save-game'
-import { encryptEs3 } from './es3-crypto'
 
 /**
  * Downloads the provided save game data as an encrypted file.
@@ -20,10 +18,28 @@ export default async function downloadSaveGame(
     throw new TypeError('This function can only be used in the browser')
   }
 
-  const binaryData = await encryptEs3(
-    JSON.stringify(saveGame, null, 4),
-    ENCRYPTION_KEY
+  const response = await fetch('/api/encrypt', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      data: JSON.stringify(saveGame, null, 4)
+    })
+  })
+
+  if (!response.ok) {
+    throw new Error('Encryption failed')
+  }
+
+  const { encrypted } = await response.json()
+  
+  // Convert base64 to Uint8Array
+  const binaryData = Uint8Array.from(
+    atob(encrypted),
+    (c) => c.charCodeAt(0)
   )
+  
   const blob = new Blob([binaryData])
 
   const url = URL.createObjectURL(blob)
