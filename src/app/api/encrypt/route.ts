@@ -1,8 +1,8 @@
-import { encryptEs3 } from '@/lib/es3-crypto'
+import { encryptEs3 } from '@/lib/es3-crypto-edge'
 import { ENCRYPTION_KEY } from '@/consts/encrypton-key'
 import { NextRequest, NextResponse } from 'next/server'
 
-export const runtime = 'nodejs' // Use Node.js runtime for crypto operations
+export const runtime = 'edge' // Use Edge runtime for Cloudflare Pages
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,8 +17,15 @@ export async function POST(request: NextRequest) {
 
     const encrypted = await encryptEs3(data, ENCRYPTION_KEY)
     
-    // Convert Uint8Array to base64
-    const base64 = Buffer.from(encrypted).toString('base64')
+    // Convert Uint8Array to base64 (Edge Runtime compatible)
+    // Use chunking to avoid spread operator limits
+    let binaryString = ''
+    const chunkSize = 8192
+    for (let i = 0; i < encrypted.length; i += chunkSize) {
+      const chunk = encrypted.slice(i, i + chunkSize)
+      binaryString += String.fromCharCode(...chunk)
+    }
+    const base64 = btoa(binaryString)
     
     return NextResponse.json({ encrypted: base64 })
   } catch (error) {

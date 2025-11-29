@@ -1,8 +1,8 @@
-import { decryptEs3 } from '@/lib/es3-crypto'
+import { decryptEs3 } from '@/lib/es3-crypto-edge'
 import { ENCRYPTION_KEY } from '@/consts/encrypton-key'
 import { NextRequest, NextResponse } from 'next/server'
 
-export const runtime = 'nodejs' // Use Node.js runtime for crypto operations
+export const runtime = 'edge' // Use Edge runtime for Cloudflare Pages
 
 export async function POST(request: NextRequest) {
   try {
