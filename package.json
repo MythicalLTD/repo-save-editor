@@ -82,7 +82,17 @@
   "pnpm": {
     "overrides": {
       "baseline-browser-mapping": "latest"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "workerd"
+    ],
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "@tailwindcss/oxide",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
   },
   "license": "MIT",
   "packageManager": "pnpm@10.24.0"
