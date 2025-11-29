@@ -15,19 +15,23 @@ R.E.P.O Save Editor is a web application that allows you to modify R.E.P.O game 
 - Purchased items and upgrades
 - Team settings and configurations
 
-**Try it now: [https://repo-save-editor.vercel.app](https://repo-save-editor.vercel.app)**
+**Try it now: [https://repo.mythical.systems](https://repo.mythical.systems)**
 
 ## Technologies
 
 This project is built using modern web technologies:
 
-- **Next.js 15** - React framework with App Router
+- **Next.js 16** - React framework with App Router
 - **React 19** - UI library
-- **TypeScript** - Type-safe JavaScript
+- **TypeScript 5** - Type-safe JavaScript
 - **TailwindCSS 4** - Utility-first CSS framework
 - **next-intl** - Internationalization support
-- **shadcn/ui** - Accessible UI components built with Radix UI
+- **Radix UI** - Accessible UI component primitives
 - **Lucide React** - Beautiful & consistent icon set
+- **next-themes** - Theme management
+- **Sonner** - Toast notifications
+- **Motion** - Animation library
+- **pako** - Compression library for save file handling
 
 ## Getting Started
 
@@ -77,7 +81,13 @@ Special thanks to [N0edL's R.E.P.O Save Editor](https://github.com/N0edL/R.E.P.O
       <td align="center">
         <a href="https://github.com/luccasfr">
           <img src="https://github.com/luccasfr.png?size=100" alt="Lucas Ferreira" />
-          <p>Lucas Ferreira</p>
+          <p>Lucas</p>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/nayskutzu">
+          <img src="https://github.com/nayskutzu.png?size=100" alt="nayskutzu" />
+          <p>nayskutzu</p>
         </a>
       </td>
     </tr>

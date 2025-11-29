@@ -95,12 +95,15 @@ export function StatsItem({
             onKeyDown={handleInputKeyDown}
             onFocus={handleInputFocus}
             min={minValue}
-            className="h-8 w-20 text-center font-mono text-lg font-bold [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="h-8 w-20 [appearance:textfield] text-center font-mono
+              text-lg font-bold [&::-webkit-inner-spin-button]:appearance-none
+              [&::-webkit-outer-spin-button]:appearance-none"
             autoFocus
           />
         ) : (
           <p
-            className="text-center font-mono text-lg font-bold cursor-pointer hover:text-primary transition-colors min-w-[80px]"
+            className="hover:text-primary min-w-[80px] cursor-pointer
+              text-center font-mono text-lg font-bold transition-colors"
             onClick={() => setIsEditing(true)}
             title="Click to edit"
           >

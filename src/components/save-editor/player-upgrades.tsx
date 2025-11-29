@@ -45,7 +45,8 @@ export default function PlayerUpgrades({
     ) {
       updatedSaveData.dictionaryOfDictionaries.value.playerUpgradeHealth[key] =
         newHealthUpgrade
-      updatedSaveData.dictionaryOfDictionaries.value.playerHealth[key] = newHealth
+      updatedSaveData.dictionaryOfDictionaries.value.playerHealth[key] =
+        newHealth
       onUpdateSaveData(updatedSaveData)
     }
   }

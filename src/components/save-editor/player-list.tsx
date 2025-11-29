@@ -42,7 +42,10 @@ export default function PlayerList({
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <h3
+          className="from-primary to-accent bg-gradient-to-r bg-clip-text
+            text-xl font-bold text-transparent"
+        >
           {t('title')}
         </h3>
         <AddPlayer
@@ -53,50 +56,53 @@ export default function PlayerList({
       </div>
       {players.length > 0 ? (
         players.map(([key, value]) => (
-      <Card key={key}>
-        <CardHeader className="flex items-center justify-between">
-          <div className="space-y-2">
-            <CardTitle>
-              <PlayerAvatar
-                hasCrown={
-                  saveGame.dictionaryOfDictionaries.value.playerHasCrown[key] >
-                  0
-                }
-                url={(steamAvatars && steamAvatars[key]) || undefined}
-                name={value}
+          <Card key={key}>
+            <CardHeader className="flex items-center justify-between">
+              <div className="space-y-2">
+                <CardTitle>
+                  <PlayerAvatar
+                    hasCrown={
+                      saveGame.dictionaryOfDictionaries.value.playerHasCrown[
+                        key
+                      ] > 0
+                    }
+                    url={(steamAvatars && steamAvatars[key]) || undefined}
+                    name={value}
+                  />
+                </CardTitle>
+                <CardDescription className="font-mono">{key}</CardDescription>
+              </div>
+              <RemovePlayer
+                saveGame={saveGame}
+                onUpdateSaveData={onUpdateSaveData}
+                playerId={key}
               />
-            </CardTitle>
-            <CardDescription className="font-mono">{key}</CardDescription>
-          </div>
-          <RemovePlayer
-            saveGame={saveGame}
-            onUpdateSaveData={onUpdateSaveData}
-            playerId={key}
-          />
-        </CardHeader>
-        <CardContent className="space-y-2">
-          <h1 className="font-bold">{t('status')}</h1>
-          <HealthBar
-            healthUpgrade={getUpgradeValue(key, 'playerUpgradeHealth')}
-            health={getUpgradeValue(key, 'playerHealth')}
-            onChange={(newHealth) =>
-              setUpgradeValue(key, 'playerHealth', newHealth)
-            }
-          />
-          <StaminaBar stamina={getUpgradeValue(key, 'playerUpgradeStamina')} />
-          <Separator />
-          <h1 className="font-bold">{t('upgrades')}</h1>
-          <PlayerUpgrades
-            saveGame={saveGame}
-            onUpdateSaveData={onUpdateSaveData}
-            playerId={key}
-          />
-        </CardContent>
-      </Card>
-    ))
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <h1 className="font-bold">{t('status')}</h1>
+              <HealthBar
+                healthUpgrade={getUpgradeValue(key, 'playerUpgradeHealth')}
+                health={getUpgradeValue(key, 'playerHealth')}
+                onChange={(newHealth) =>
+                  setUpgradeValue(key, 'playerHealth', newHealth)
+                }
+              />
+              <StaminaBar
+                stamina={getUpgradeValue(key, 'playerUpgradeStamina')}
+              />
+              <Separator />
+              <h1 className="font-bold">{t('upgrades')}</h1>
+              <PlayerUpgrades
+                saveGame={saveGame}
+                onUpdateSaveData={onUpdateSaveData}
+                playerId={key}
+              />
+            </CardContent>
+          </Card>
+        ))
       ) : (
         <Card>
-          <CardContent className="py-8 text-center text-muted-foreground">
+          <CardContent className="text-muted-foreground py-8 text-center">
             <p>{t('empty')}</p>
           </CardContent>
         </Card>

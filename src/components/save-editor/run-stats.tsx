@@ -72,7 +72,10 @@ export default function RunStats({
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
             {saveGame.teamName.value}
-            <Dialog open={teamNameDialogOpen} onOpenChange={setTeamNameDialogOpen}>
+            <Dialog
+              open={teamNameDialogOpen}
+              onOpenChange={setTeamNameDialogOpen}
+            >
               <DialogTrigger asChild>
                 <Button variant="ghost" size="icon" className="h-6 w-6">
                   <Edit2 className="h-3 w-3" />
@@ -81,9 +84,7 @@ export default function RunStats({
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>{t('stats.team_name')}</DialogTitle>
-                  <DialogDescription>
-                    Update your team name
-                  </DialogDescription>
+                  <DialogDescription>Update your team name</DialogDescription>
                 </DialogHeader>
                 <div className="space-y-4 py-4">
                   <div className="space-y-2">
@@ -99,7 +100,10 @@ export default function RunStats({
                   </div>
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={() => setTeamNameDialogOpen(false)}>
+                  <Button
+                    variant="outline"
+                    onClick={() => setTeamNameDialogOpen(false)}
+                  >
                     {t('cancel')}
                   </Button>
                   <Button onClick={handleTeamNameSave}>{t('save')}</Button>
@@ -108,7 +112,7 @@ export default function RunStats({
             </Dialog>
           </CardTitle>
         </div>
-        <CardDescription className="flex items-center gap-4 flex-wrap">
+        <CardDescription className="flex flex-wrap items-center gap-4">
           <TimePlayedEditor
             timePlayed={saveGame.timePlayed.value}
             onTimePlayedChange={handleTimePlayedChange}
@@ -116,7 +120,7 @@ export default function RunStats({
           <Dialog open={dateDialogOpen} onOpenChange={setDateDialogOpen}>
             <DialogTrigger asChild>
               <Button variant="ghost" size="sm" className="h-auto p-1 text-xs">
-                <Calendar className="h-3 w-3 mr-1" />
+                <Calendar className="mr-1 h-3 w-3" />
                 {saveGame.dateAndTime.value}
               </Button>
             </DialogTrigger>
@@ -142,7 +146,10 @@ export default function RunStats({
                 </div>
               </div>
               <DialogFooter>
-                <Button variant="outline" onClick={() => setDateDialogOpen(false)}>
+                <Button
+                  variant="outline"
+                  onClick={() => setDateDialogOpen(false)}
+                >
                   {t('cancel')}
                 </Button>
                 <Button onClick={handleDateSave}>{t('save')}</Button>
@@ -160,7 +167,9 @@ export default function RunStats({
             numericValue={getRunStatValue('level') + 1}
             onIncrease={() => handleStatChange('level', 1, 1)}
             onDecrease={() => handleStatChange('level', -1, 1)}
-            onValueChange={(newValue) => updateRunStatValue('level', Math.max(1, newValue - 1))}
+            onValueChange={(newValue) =>
+              updateRunStatValue('level', Math.max(1, newValue - 1))
+            }
             disableDecrease={getRunStatValue('level') <= 1}
             minValue={2}
           />
@@ -171,7 +180,9 @@ export default function RunStats({
             numericValue={getRunStatValue('currency')}
             onIncrease={() => handleStatChange('currency', 1)}
             onDecrease={() => handleStatChange('currency', -1)}
-            onValueChange={(newValue) => updateRunStatValue('currency', Math.max(0, newValue))}
+            onValueChange={(newValue) =>
+              updateRunStatValue('currency', Math.max(0, newValue))
+            }
             disableDecrease={getRunStatValue('currency') <= 0}
             minValue={0}
           />
@@ -182,7 +193,9 @@ export default function RunStats({
             numericValue={getRunStatValue('totalHaul')}
             onIncrease={() => handleStatChange('totalHaul', 1)}
             onDecrease={() => handleStatChange('totalHaul', -1)}
-            onValueChange={(newValue) => updateRunStatValue('totalHaul', Math.max(0, newValue))}
+            onValueChange={(newValue) =>
+              updateRunStatValue('totalHaul', Math.max(0, newValue))
+            }
             disableDecrease={getRunStatValue('totalHaul') <= 0}
             minValue={0}
           />
@@ -193,7 +206,9 @@ export default function RunStats({
             numericValue={getRunStatValue('chargingStationCharge')}
             onIncrease={() => handleStatChange('chargingStationCharge', 1)}
             onDecrease={() => handleStatChange('chargingStationCharge', -1)}
-            onValueChange={(newValue) => updateRunStatValue('chargingStationCharge', Math.max(0, newValue))}
+            onValueChange={(newValue) =>
+              updateRunStatValue('chargingStationCharge', Math.max(0, newValue))
+            }
             disableDecrease={getRunStatValue('chargingStationCharge') <= 0}
             minValue={0}
           />

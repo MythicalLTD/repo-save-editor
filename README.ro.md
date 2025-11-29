@@ -13,19 +13,23 @@ R.E.P.O Save Editor este o aplicație web care vă permite să modificați fiși
 - Obiecte cumpărate și upgrade-uri
 - Setări și configurații de echipă
 
-**Încercați acum: [https://repo-save-editor.vercel.app](https://repo-save-editor.vercel.app)**
+**Încercați acum: [https://repo.mythical.systems](https://repo.mythical.systems)**
 
 ## Tehnologii
 
 Acest proiect este construit folosind tehnologii web moderne:
 
-- **Next.js 15** - Framework React cu App Router
+- **Next.js 16** - Framework React cu App Router
 - **React 19** - Biblioteca de UI
-- **TypeScript** - JavaScript cu tipuri
+- **TypeScript 5** - JavaScript cu tipuri
 - **TailwindCSS 4** - Framework CSS utilitar
 - **next-intl** - Suport pentru internaționalizare
-- **shadcn/ui** - Componente UI accesibile construite cu Radix UI
+- **Radix UI** - Componente UI accesibile primitive
 - **Lucide React** - Set de icoane frumoase și consistente
+- **next-themes** - Gestionare teme
+- **Sonner** - Notificări toast
+- **Motion** - Bibliotecă de animație
+- **pako** - Bibliotecă de compresie pentru manipularea fișierelor de salvare
 
 ## Cum Să Începeți
 
@@ -75,10 +79,15 @@ Mulțumiri speciale pentru [R.E.P.O Save Editor de la N0edL](https://github.com/
       <td align="center">
         <a href="https://github.com/luccasfr">
           <img src="https://github.com/luccasfr.png?size=100" alt="Lucas Ferreira" />
-          <p>Lucas Ferreira</p>
+          <p>Lucas</p>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/nayskutzu">
+          <img src="https://github.com/nayskutzu.png?size=100" alt="nayskutzu" />
+          <p>nayskutzu</p>
         </a>
       </td>
     </tr>
   </tbody>
 </table>
-

@@ -49,7 +49,10 @@ export default function NavbarVersionHistory() {
       </DialogTrigger>
       <DialogContent className="max-h-[80vh] max-w-2xl overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <DialogTitle
+            className="from-primary to-accent bg-gradient-to-r bg-clip-text
+              text-transparent"
+          >
             {t('title')}
           </DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
@@ -58,7 +61,9 @@ export default function NavbarVersionHistory() {
           {[...versionHistory.releases].reverse().map((release) => (
             <Accordion key={release.version} type="single" collapsible>
               <AccordionItem value={release.version} className="last:border-b">
-                <AccordionTrigger className="hover:bg-accent/30 p-2 font-semibold">
+                <AccordionTrigger
+                  className="hover:bg-accent/30 p-2 font-semibold"
+                >
                   {release.version}
                 </AccordionTrigger>
                 <AccordionContent className="space-y-2 p-2">
@@ -71,7 +76,7 @@ export default function NavbarVersionHistory() {
                   </p>
                   {release.changes[locale].map((change, index) => (
                     <div className="flex items-center gap-1" key={index}>
-                      <Asterisk className="size-4 shrink-0 text-primary/70" />
+                      <Asterisk className="text-primary/70 size-4 shrink-0" />
                       <div className="flex items-center gap-2">
                         <span className="text-sm">{change}</span>
                       </div>
@@ -86,4 +91,3 @@ export default function NavbarVersionHistory() {
     </Dialog>
   )
 }
-

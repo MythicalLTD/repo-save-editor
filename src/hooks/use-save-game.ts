@@ -79,7 +79,9 @@ export function useSaveGame({ saveGame, onUpdateSaveData }: UseSaveGameProps) {
     // Add player name
     if (!updatedSaveGame.playerNames?.value) {
       updatedSaveGame.playerNames = {
-        __type: updatedSaveGame.playerNames?.__type || 'System.Collections.Generic.Dictionary`2',
+        __type:
+          updatedSaveGame.playerNames?.__type ||
+          'System.Collections.Generic.Dictionary`2',
         value: {}
       }
     }

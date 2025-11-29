@@ -228,13 +228,17 @@ export default function UploadFile({
       <div>
         <div
           className={cn(
-            'group flex min-h-40 w-full cursor-pointer items-center justify-center rounded-2xl',
-            'border-2 border-dashed py-8 transition-all duration-300 lg:min-h-56',
-            'bg-gradient-to-br from-card/60 to-card/40 backdrop-blur-md',
-            'shadow-lg shadow-primary/5',
-            errorMessage 
-              ? 'border-destructive bg-destructive/5 hover:bg-destructive/10 hover:border-destructive/60 hover:shadow-destructive/10' 
-              : 'border-primary/40 hover:border-primary/60 hover:bg-primary/10 hover:shadow-primary/20 hover:scale-[1.01]',
+            `group flex min-h-40 w-full cursor-pointer items-center
+            justify-center rounded-2xl`,
+            `border-2 border-dashed py-8 transition-all duration-300
+            lg:min-h-56`,
+            'from-card/60 to-card/40 bg-gradient-to-br backdrop-blur-md',
+            'shadow-primary/5 shadow-lg',
+            errorMessage
+              ? `border-destructive bg-destructive/5 hover:bg-destructive/10
+                hover:border-destructive/60 hover:shadow-destructive/10`
+              : `border-primary/40 hover:border-primary/60 hover:bg-primary/10
+                hover:shadow-primary/20 hover:scale-[1.01]`,
             className
           )}
           onDragOver={(e) => handleDragEvent(e, 'over')}
@@ -275,13 +279,20 @@ export default function UploadFile({
             </div>
           ) : (
             <div
-              className="text-primary/70 pointer-events-none flex w-full flex-col items-center justify-center
-                gap-4 px-4 text-center transition-all duration-300 group-hover:text-primary"
+              className="text-primary/70 group-hover:text-primary
+                pointer-events-none flex w-full flex-col items-center
+                justify-center gap-4 px-4 text-center transition-all
+                duration-300"
             >
-              <div className="rounded-full bg-primary/10 p-4 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">
+              <div
+                className="bg-primary/10 group-hover:bg-primary/20 rounded-full
+                  p-4 transition-all duration-300 group-hover:scale-110"
+              >
                 {statusIcons[dragStatus]}
               </div>
-              <p className="text-base font-medium">{getStatusText(dragStatus)}</p>
+              <p className="text-base font-medium">
+                {getStatusText(dragStatus)}
+              </p>
             </div>
           )}
         </div>
@@ -289,18 +300,30 @@ export default function UploadFile({
       {errorMessage && (
         <p className="text-destructive text-sm font-semibold">{errorMessage}</p>
       )}
-      <div className="space-y-3 rounded-xl border border-primary/10 bg-muted/20 p-4 backdrop-blur-sm">
-        <p className="text-sm font-medium text-foreground/80">{t(`save_game.info`)}</p>
-        <div className="border-primary/20 relative rounded-lg border bg-background/50 py-3 pr-10 pl-4 font-mono text-sm break-all backdrop-blur-sm transition-all hover:border-primary/30">
+      <div
+        className="border-primary/10 bg-muted/20 space-y-3 rounded-xl border p-4
+          backdrop-blur-sm"
+      >
+        <p className="text-foreground/80 text-sm font-medium">
+          {t(`save_game.info`)}
+        </p>
+        <div
+          className="border-primary/20 bg-background/50 hover:border-primary/30
+            relative rounded-lg border py-3 pr-10 pl-4 font-mono text-sm
+            break-all backdrop-blur-sm transition-all"
+        >
           <Button
             variant="outline"
-            className="absolute top-1/2 right-2 h-7 w-7 -translate-y-1/2 hover:bg-primary/10"
+            className="hover:bg-primary/10 absolute top-1/2 right-2 h-7 w-7
+              -translate-y-1/2"
             size="icon"
             onClick={handleCopy}
           >
             <Copy className="size-3.5" />
           </Button>
-          <p className="text-foreground/70">%USERPROFILE%\AppData\LocalLow\semiwork\Repo\saves</p>
+          <p className="text-foreground/70">
+            %USERPROFILE%\AppData\LocalLow\semiwork\Repo\saves
+          </p>
         </div>
       </div>
     </div>

@@ -40,7 +40,8 @@ export function ItemInstances({
   const [newItemBattery, setNewItemBattery] = useState(100)
 
   const itemDict = saveGame.dictionaryOfDictionaries.value.item || {}
-  const batteryDict = saveGame.dictionaryOfDictionaries.value.itemStatBattery || {}
+  const batteryDict =
+    saveGame.dictionaryOfDictionaries.value.itemStatBattery || {}
 
   const updateItemValue = (itemId: string, newValue: number) => {
     const updatedSaveGame = structuredClone(saveGame)
@@ -56,7 +57,8 @@ export function ItemInstances({
     if (!updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery) {
       updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery = {}
     }
-    updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery[itemId] = newBattery
+    updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery[itemId] =
+      newBattery
     onUpdateSaveData(updatedSaveGame)
   }
 
@@ -65,8 +67,12 @@ export function ItemInstances({
     if (updatedSaveGame.dictionaryOfDictionaries.value.item?.[itemId]) {
       delete updatedSaveGame.dictionaryOfDictionaries.value.item[itemId]
     }
-    if (updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery?.[itemId]) {
-      delete updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery[itemId]
+    if (
+      updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery?.[itemId]
+    ) {
+      delete updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery[
+        itemId
+      ]
     }
     onUpdateSaveData(updatedSaveGame)
   }
@@ -80,8 +86,10 @@ export function ItemInstances({
     if (!updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery) {
       updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery = {}
     }
-    updatedSaveGame.dictionaryOfDictionaries.value.item[newItemId] = newItemValue
-    updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery[newItemId] = newItemBattery
+    updatedSaveGame.dictionaryOfDictionaries.value.item[newItemId] =
+      newItemValue
+    updatedSaveGame.dictionaryOfDictionaries.value.itemStatBattery[newItemId] =
+      newItemBattery
     onUpdateSaveData(updatedSaveGame)
     setNewItemId('')
     setNewItemValue(0)
@@ -89,7 +97,9 @@ export function ItemInstances({
     setDialogOpen(false)
   }
 
-  const itemEntries = Object.entries(itemDict).sort(([a], [b]) => a.localeCompare(b))
+  const itemEntries = Object.entries(itemDict).sort(([a], [b]) =>
+    a.localeCompare(b)
+  )
 
   if (itemEntries.length === 0) {
     return (
@@ -101,12 +111,12 @@ export function ItemInstances({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="text-center py-8 text-muted-foreground">
+          <div className="text-muted-foreground py-8 text-center">
             <p>No item instances found.</p>
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
               <DialogTrigger asChild>
                 <Button className="mt-4">
-                  <Plus className="h-4 w-4 mr-2" />
+                  <Plus className="mr-2 h-4 w-4" />
                   Add Item Instance
                 </Button>
               </DialogTrigger>
@@ -144,12 +154,17 @@ export function ItemInstances({
                       min="0"
                       max="100"
                       value={newItemBattery}
-                      onChange={(e) => setNewItemBattery(Number(e.target.value))}
+                      onChange={(e) =>
+                        setNewItemBattery(Number(e.target.value))
+                      }
                     />
                   </div>
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={() => setDialogOpen(false)}>
+                  <Button
+                    variant="outline"
+                    onClick={() => setDialogOpen(false)}
+                  >
                     Cancel
                   </Button>
                   <Button onClick={addItem}>Add</Button>
@@ -169,13 +184,14 @@ export function ItemInstances({
           <div>
             <CardTitle>Item Instances</CardTitle>
             <CardDescription>
-              Individual item instances in your inventory ({itemEntries.length} items)
+              Individual item instances in your inventory ({itemEntries.length}{' '}
+              items)
             </CardDescription>
           </div>
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogTrigger asChild>
               <Button size="sm">
-                <Plus className="h-4 w-4 mr-2" />
+                <Plus className="mr-2 h-4 w-4" />
                 Add Instance
               </Button>
             </DialogTrigger>
@@ -228,21 +244,36 @@ export function ItemInstances({
         </div>
       </CardHeader>
       <CardContent>
-        <div className="overflow-hidden rounded-xl border border-primary/20 bg-card/40 backdrop-blur-sm">
+        <div
+          className="border-primary/20 bg-card/40 overflow-hidden rounded-xl
+            border backdrop-blur-sm"
+        >
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b border-primary/20 bg-primary/5">
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">
+                <tr className="border-primary/20 bg-primary/5 border-b">
+                  <th
+                    className="text-foreground px-6 py-4 text-left text-sm
+                      font-semibold"
+                  >
                     Item ID
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-foreground">
+                  <th
+                    className="text-foreground px-6 py-4 text-center text-sm
+                      font-semibold"
+                  >
                     Value
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-foreground">
+                  <th
+                    className="text-foreground px-6 py-4 text-center text-sm
+                      font-semibold"
+                  >
                     Battery (%)
                   </th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-foreground">
+                  <th
+                    className="text-foreground px-6 py-4 text-right text-sm
+                      font-semibold"
+                  >
                     Actions
                   </th>
                 </tr>
@@ -251,7 +282,8 @@ export function ItemInstances({
                 {itemEntries.map(([itemId, value]) => (
                   <tr
                     key={itemId}
-                    className="border-b border-primary/10 hover:bg-primary/5 transition-colors"
+                    className="border-primary/10 hover:bg-primary/5 border-b
+                      transition-colors"
                   >
                     <td className="px-6 py-4 font-mono text-sm">{itemId}</td>
                     <td className="px-6 py-4 text-center">
@@ -295,4 +327,3 @@ export function ItemInstances({
     </Card>
   )
 }
-

@@ -120,19 +120,35 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: 
-      radial-gradient(at 0% 0%, oklch(0.15 0.05 280 / 0.3) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, oklch(0.2 0.06 300 / 0.2) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, oklch(0.18 0.04 290 / 0.25) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, oklch(0.16 0.05 270 / 0.2) 0px, transparent 50%);
+    background-image:
+      radial-gradient(
+        at 0% 0%,
+        oklch(0.15 0.05 280 / 0.3) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 100% 0%,
+        oklch(0.2 0.06 300 / 0.2) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 100% 100%,
+        oklch(0.18 0.04 290 / 0.25) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 0% 100%,
+        oklch(0.16 0.05 270 / 0.2) 0px,
+        transparent 50%
+      );
     background-attachment: fixed;
   }
-  
+
   /* Smooth scroll behavior */
   html {
     scroll-behavior: smooth;
   }
-  
+
   /* Fade in animation */
   @keyframes fadeIn {
     from {
@@ -144,62 +160,46 @@
       transform: translateY(0);
     }
   }
-  
+
   /* Apply fade in to main content */
   main > div {
     animation: fadeIn 0.5s ease-out;
   }
-  
+
   /* Apply purple filter to icon images */
-  img[src*="icon.png"],
-  img[src*="/icon.png"],
-  img[alt*="icon" i],
-  img[alt*="Icon" i],
-  img[alt*="R.E.P.O Save Editor Logo" i] {
-    filter: 
-      brightness(0.85) 
-      saturate(1.8) 
-      hue-rotate(250deg) 
-      contrast(1.2)
+  img[src*='icon.png'],
+  img[src*='/icon.png'],
+  img[alt*='icon' i],
+  img[alt*='Icon' i],
+  img[alt*='R.E.P.O Save Editor Logo' i] {
+    filter: brightness(0.85) saturate(1.8) hue-rotate(250deg) contrast(1.2)
       drop-shadow(0 0 8px oklch(0.65 0.25 300 / 0.4));
     transition: filter 0.3s ease;
   }
-  
+
   /* Purple glow effect for icons */
-  img[src*="icon.png"]:hover,
-  img[src*="/icon.png"]:hover {
-    filter: 
-      brightness(0.9) 
-      saturate(2) 
-      hue-rotate(250deg) 
-      contrast(1.3)
+  img[src*='icon.png']:hover,
+  img[src*='/icon.png']:hover {
+    filter: brightness(0.9) saturate(2) hue-rotate(250deg) contrast(1.3)
       drop-shadow(0 0 12px oklch(0.7 0.25 300 / 0.6));
   }
-  
+
   /* Apply purple filter to logo images */
-  img[src*="closed.png"],
-  img[src*="open.png"],
-  img[alt*="logo" i],
-  img[alt*="Logo" i],
+  img[src*='closed.png'],
+  img[src*='open.png'],
+  img[alt*='logo' i],
+  img[alt*='Logo' i],
   .purple-logo {
-    filter: 
-      brightness(0.9) 
-      saturate(1.8) 
-      hue-rotate(250deg) 
-      contrast(1.2)
+    filter: brightness(0.9) saturate(1.8) hue-rotate(250deg) contrast(1.2)
       drop-shadow(0 0 6px oklch(0.65 0.25 300 / 0.3));
     transition: filter 0.3s ease;
   }
-  
+
   /* Purple glow effect for logos on hover */
-  img[src*="closed.png"]:hover,
-  img[src*="open.png"]:hover,
+  img[src*='closed.png']:hover,
+  img[src*='open.png']:hover,
   .purple-logo:hover {
-    filter: 
-      brightness(1) 
-      saturate(2) 
-      hue-rotate(250deg) 
-      contrast(1.3)
+    filter: brightness(1) saturate(2) hue-rotate(250deg) contrast(1.3)
       drop-shadow(0 0 10px oklch(0.7 0.25 300 / 0.5));
   }
 }

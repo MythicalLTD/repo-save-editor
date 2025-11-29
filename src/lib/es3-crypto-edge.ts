@@ -143,7 +143,11 @@ export async function decryptEs3(
   const decryptedData = new Uint8Array(decrypted)
 
   // Check if data is GZIP compressed (magic bytes: 0x1F 0x8B)
-  if (decryptedData.length >= 2 && decryptedData[0] === 0x1f && decryptedData[1] === 0x8b) {
+  if (
+    decryptedData.length >= 2 &&
+    decryptedData[0] === 0x1f &&
+    decryptedData[1] === 0x8b
+  ) {
     const unzippedData = await gunzip(decryptedData)
     const decoder = new TextDecoder(encoding)
     return decoder.decode(unzippedData)
@@ -152,4 +156,3 @@ export async function decryptEs3(
   const decoder = new TextDecoder(encoding)
   return decoder.decode(decryptedData)
 }
-

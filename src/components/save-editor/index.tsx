@@ -116,16 +116,28 @@ export default function SaveEditor() {
         <div className="space-y-12 pb-12">
           {/* Hero Upload Section */}
           <div className="relative">
-            <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 blur-3xl" />
-            <div className="relative rounded-2xl border border-primary/20 bg-card/30 p-8 backdrop-blur-sm">
+            <div
+              className="from-primary/10 via-accent/5 to-primary/10 absolute
+                inset-0 -z-10 rounded-2xl bg-gradient-to-br blur-3xl"
+            />
+            <div
+              className="border-primary/20 bg-card/30 relative rounded-2xl
+                border p-8 backdrop-blur-sm"
+            >
               <UploadFile className="w-full" onFilesChange={handleFileUpload} />
             </div>
           </div>
 
           {/* Recent Section - Full Width */}
           <div className="relative">
-            <div className="absolute inset-0 -z-10 rounded-xl bg-gradient-to-br from-primary/5 to-transparent blur-2xl" />
-            <div className="relative rounded-xl border border-primary/10 bg-card/20 p-6 backdrop-blur-sm">
+            <div
+              className="from-primary/5 absolute inset-0 -z-10 rounded-xl
+                bg-gradient-to-br to-transparent blur-2xl"
+            />
+            <div
+              className="border-primary/10 bg-card/20 relative rounded-xl border
+                p-6 backdrop-blur-sm"
+            >
               <SaveGameHistory onSelectSave={handleSelectSave} />
             </div>
           </div>

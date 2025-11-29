@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: 'R.E.P.O. Save Editor',
   description:
     'Web application that allows you to modify R.E.P.O game save files easily.',
+  metadataBase: new URL('https://repo.mythical.systems'),
   icons: {
     icon: [
       {
@@ -49,8 +50,8 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-[100dvh] flex-col
-          font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex
+          min-h-[100dvh] flex-col font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -62,9 +63,7 @@ export default async function RootLayout({
           <NextIntlClientProvider>
             <Navbar />
             <main className="flex-1 px-6 pt-24 md:px-12">
-              <div className="mx-auto max-w-7xl">
-                {children}
-              </div>
+              <div className="mx-auto max-w-7xl">{children}</div>
             </main>
             <Footer />
             <Toaster />

@@ -7,7 +7,7 @@ export const runtime = 'edge' // Use Edge runtime for Cloudflare Pages
 export async function POST(request: NextRequest) {
   try {
     const { base64 } = await request.json()
-    
+
     if (!base64) {
       return NextResponse.json(
         { error: 'Base64 data is required' },
@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     }
 
     const decrypted = await decryptEs3(base64, ENCRYPTION_KEY)
-    
+
     return NextResponse.json({ decrypted })
   } catch (error) {
     console.error('Decryption error:', error)
@@ -26,4 +26,3 @@ export async function POST(request: NextRequest) {
     )
   }
 }
-

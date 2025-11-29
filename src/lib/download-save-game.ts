@@ -33,13 +33,10 @@ export default async function downloadSaveGame(
   }
 
   const { encrypted } = await response.json()
-  
+
   // Convert base64 to Uint8Array
-  const binaryData = Uint8Array.from(
-    atob(encrypted),
-    (c) => c.charCodeAt(0)
-  )
-  
+  const binaryData = Uint8Array.from(atob(encrypted), (c) => c.charCodeAt(0))
+
   const blob = new Blob([binaryData])
 
   const url = URL.createObjectURL(blob)

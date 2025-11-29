@@ -126,8 +126,8 @@ export function HealthBar({
           <div
             ref={barRef}
             className={cn(
-              `relative flex h-8 w-full items-center justify-end rounded bg-green-800 px-2
-              text-white`,
+              `relative flex h-8 w-full items-center justify-end rounded
+              bg-green-800 px-2 text-white`,
               onChange && 'cursor-grab',
               isDragging && 'cursor-grabbing'
             )}
@@ -136,8 +136,8 @@ export function HealthBar({
           >
             <div
               style={{ width: (health / maxHealth) * 100 + '%' }}
-              className="absolute left-0 z-20 flex h-8 items-center justify-between rounded bg-green-600
-                px-2 py-1"
+              className="absolute left-0 z-20 flex h-8 items-center
+                justify-between rounded bg-green-600 px-2 py-1"
             >
               <Cross className="size-4" />
               <p className="font-mono">{health}</p>
@@ -160,11 +160,11 @@ export function StaminaBar({ stamina }: { stamina: number }) {
   const BASE_STAMINA = 40
   const STAMINA_INCREMENT = 10
   const totalStamina = BASE_STAMINA + stamina * STAMINA_INCREMENT
-  
+
   return (
     <div
-      className="flex h-8 w-full items-center justify-between gap-1 rounded bg-yellow-500 px-2
-        py-1"
+      className="flex h-8 w-full items-center justify-between gap-1 rounded
+        bg-yellow-500 px-2 py-1"
     >
       <Zap className="size-4" />
       <p className="font-mono">{totalStamina}</p>

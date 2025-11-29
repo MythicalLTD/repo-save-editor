@@ -35,7 +35,7 @@ export default function Logo() {
         alt="logo"
         width={64}
         height={64}
-        className={cn('size-12 purple-logo', isOpen ? 'hidden' : 'block')}
+        className={cn('purple-logo size-12', isOpen ? 'hidden' : 'block')}
         priority
       />
       <Image
@@ -43,7 +43,7 @@ export default function Logo() {
         alt="logoOpen"
         width={64}
         height={64}
-        className={cn('size-12 purple-logo', isOpen ? 'block' : 'hidden')}
+        className={cn('purple-logo size-12', isOpen ? 'block' : 'hidden')}
         priority
       />
     </button>

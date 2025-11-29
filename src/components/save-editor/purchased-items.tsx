@@ -42,7 +42,11 @@ export function PurchasedItems({
   onUpdateSaveData
 }: PurchasedItemsProps) {
   const t = useTranslations('run_stats')
-  const { handleItemsPurchasedChange, addPurchasedItem, updatePurchasedItemValue } = useRunStats(saveGame, onUpdateSaveData)
+  const {
+    handleItemsPurchasedChange,
+    addPurchasedItem,
+    updatePurchasedItemValue
+  } = useRunStats(saveGame, onUpdateSaveData)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedItem, setSelectedItem] = useState<string | null>(null)
@@ -93,7 +97,7 @@ export function PurchasedItems({
               <DialogTrigger asChild>
                 <Button
                   variant="outline"
-                  className="w-full border-primary/30 hover:border-primary/50"
+                  className="border-primary/30 hover:border-primary/50 w-full"
                 >
                   <Plus className="mr-2 size-4" />
                   Add New Item
@@ -110,7 +114,10 @@ export function PurchasedItems({
                   <div className="space-y-2">
                     <Label htmlFor="search">Search Items</Label>
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                      <Search
+                        className="text-muted-foreground absolute top-1/2 left-3
+                          size-4 -translate-y-1/2"
+                      />
                       <Input
                         id="search"
                         placeholder="Search for an item..."
@@ -132,7 +139,9 @@ export function PurchasedItems({
                           {selectedItem || 'Choose an item...'}
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent className="max-h-60 w-full overflow-y-auto">
+                      <DropdownMenuContent
+                        className="max-h-60 w-full overflow-y-auto"
+                      >
                         {availableItems.length > 0 ? (
                           availableItems.map((itemName) => {
                             const Icon = PURCHASED_ITEMS_ICON[itemName] ?? Zap
@@ -183,10 +192,7 @@ export function PurchasedItems({
                   >
                     Cancel
                   </Button>
-                  <Button
-                    onClick={handleAddItem}
-                    disabled={!selectedItem}
-                  >
+                  <Button onClick={handleAddItem} disabled={!selectedItem}>
                     Add Item
                   </Button>
                 </DialogFooter>
@@ -206,7 +212,9 @@ export function PurchasedItems({
                     numericValue={value}
                     onIncrease={() => handleItemsPurchasedChange(key, 1)}
                     onDecrease={() => handleItemsPurchasedChange(key, -1)}
-                    onValueChange={(newValue) => updatePurchasedItemValue(key, newValue)}
+                    onValueChange={(newValue) =>
+                      updatePurchasedItemValue(key, newValue)
+                    }
                     disableDecrease={value <= 0}
                     minValue={0}
                   />

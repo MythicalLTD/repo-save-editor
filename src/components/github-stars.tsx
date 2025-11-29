@@ -54,7 +54,10 @@ export default function GitHubStars() {
               />
               <p className="font-sans">{t('title')}</p>
               <div className="flex items-center gap-1">
-                <Star className="size-4 transition-colors group-hover:text-amber-500" />
+                <Star
+                  className="size-4 transition-colors
+                    group-hover:text-amber-500"
+                />
                 <NumberTicker value={gitHubStars} />
               </div>
             </Button>

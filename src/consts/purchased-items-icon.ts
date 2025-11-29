@@ -10,6 +10,8 @@ import {
   Skull,
   Radio,
   ZapOff,
+  Zap,
+  Waves,
   Syringe,
   Cross,
   Utensils,
@@ -82,5 +84,8 @@ export const PURCHASED_ITEMS_ICON: Record<string, LucideIcon> = {
   'Gun Laser': BowArrow,
   'Phase Bridge': GripVertical,
   'Upgrade Player Crouch Rest': Shield,
-  'Upgrade Player Tumble Wings': Feather
+  'Upgrade Player Tumble Wings': Feather,
+  'Gun Stun': Zap,
+  'Gun Shockwave': Waves,
+  'Melee Stun Baton': Zap
 }

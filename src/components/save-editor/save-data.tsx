@@ -81,12 +81,18 @@ export default function SaveData({
   return (
     <div className="space-y-6 pb-12">
       {fileName && (
-        <div className="rounded-lg border border-primary/20 bg-card/30 px-4 py-2 backdrop-blur-sm">
-          <p className="text-sm font-medium text-primary/80">File:</p>
+        <div
+          className="border-primary/20 bg-card/30 rounded-lg border px-4 py-2
+            backdrop-blur-sm"
+        >
+          <p className="text-primary/80 text-sm font-medium">File:</p>
           <p className="text-muted-foreground font-mono text-sm">{fileName}</p>
         </div>
       )}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-primary/20 bg-card/30 p-4 backdrop-blur-sm">
+      <div
+        className="border-primary/20 bg-card/30 flex flex-wrap items-center
+          justify-between gap-3 rounded-xl border p-4 backdrop-blur-sm"
+      >
         <div className="flex items-center gap-2">
           <SaveDataActionButton
             icon={Home}
@@ -116,18 +122,36 @@ export default function SaveData({
       </div>
       <div className="space-y-6">
         <div className="relative">
-          <div className="absolute inset-0 -z-10 rounded-xl bg-gradient-to-br from-primary/5 to-transparent blur-2xl" />
-          <div className="relative space-y-4 rounded-xl border border-primary/10 bg-card/20 p-6 backdrop-blur-sm">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div
+            className="from-primary/5 absolute inset-0 -z-10 rounded-xl
+              bg-gradient-to-br to-transparent blur-2xl"
+          />
+          <div
+            className="border-primary/10 bg-card/20 relative space-y-4
+              rounded-xl border p-6 backdrop-blur-sm"
+          >
+            <h3
+              className="from-primary to-accent bg-gradient-to-r bg-clip-text
+                text-xl font-bold text-transparent"
+            >
               {t('run_data')}
             </h3>
             <RunStats saveGame={saveGame} onUpdateSaveData={onUpdateSaveData} />
           </div>
         </div>
         <div className="relative">
-          <div className="absolute inset-0 -z-10 rounded-xl bg-gradient-to-br from-accent/5 to-transparent blur-2xl" />
-          <div className="relative space-y-4 rounded-xl border border-primary/10 bg-card/20 p-6 backdrop-blur-sm">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div
+            className="from-accent/5 absolute inset-0 -z-10 rounded-xl
+              bg-gradient-to-br to-transparent blur-2xl"
+          />
+          <div
+            className="border-primary/10 bg-card/20 relative space-y-4
+              rounded-xl border p-6 backdrop-blur-sm"
+          >
+            <h3
+              className="from-primary to-accent bg-gradient-to-r bg-clip-text
+                text-xl font-bold text-transparent"
+            >
               {t('players')}
             </h3>
             <PlayerList
@@ -139,8 +163,14 @@ export default function SaveData({
           </div>
         </div>
         <div className="relative">
-          <div className="absolute inset-0 -z-10 rounded-xl bg-gradient-to-br from-primary/5 to-transparent blur-2xl" />
-          <div className="relative space-y-4 rounded-xl border border-primary/10 bg-card/20 p-6 backdrop-blur-sm">
+          <div
+            className="from-primary/5 absolute inset-0 -z-10 rounded-xl
+              bg-gradient-to-br to-transparent blur-2xl"
+          />
+          <div
+            className="border-primary/10 bg-card/20 relative space-y-4
+              rounded-xl border p-6 backdrop-blur-sm"
+          >
             <ItemInstances
               saveGame={saveGame}
               onUpdateSaveData={onUpdateSaveData}

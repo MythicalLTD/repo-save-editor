@@ -64,11 +64,16 @@ export function useRunStats(
   const addPurchasedItem = (itemName: string, initialQuantity = 0) => {
     const itemKey = `Item ${itemName.replaceAll(' ', '_')}`
     const updatedSaveData = { ...saveData }
-    
+
     // Initialize if it doesn't exist
-    if (!updatedSaveData.dictionaryOfDictionaries.value.itemsPurchased[itemKey]) {
-      updatedSaveData.dictionaryOfDictionaries.value.itemsPurchased[itemKey] = initialQuantity
-      updatedSaveData.dictionaryOfDictionaries.value.itemsPurchasedTotal[itemKey] = initialQuantity
+    if (
+      !updatedSaveData.dictionaryOfDictionaries.value.itemsPurchased[itemKey]
+    ) {
+      updatedSaveData.dictionaryOfDictionaries.value.itemsPurchased[itemKey] =
+        initialQuantity
+      updatedSaveData.dictionaryOfDictionaries.value.itemsPurchasedTotal[
+        itemKey
+      ] = initialQuantity
       onUpdateSaveData(updatedSaveData)
     }
   }
